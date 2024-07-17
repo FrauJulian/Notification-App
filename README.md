@@ -13,7 +13,8 @@ Another Demo Project to learn C#! Use it if you do not violate the license.
 - Newtonsoft.Json
 - Microsoft.Data.Sqlite
 - Plugin.LocalNotification
-- 
+- CommunityToolkit.Mvvm
+
 <br>
 
 ## 📋 Credits:
