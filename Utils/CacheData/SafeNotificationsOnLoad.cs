@@ -4,7 +4,7 @@
     {
         public static void SafeNotificationsOnLoad(object data)
         {
-            var cacheFile = Path.Combine(FileSystem.Current.CacheDirectory, "Notifications.json");
+            string cacheFile = Path.Combine(FileSystem.Current.CacheDirectory, "Notifications.json");
 
             if (File.Exists(cacheFile))
             {

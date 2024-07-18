@@ -1,9 +1,8 @@
 ﻿using Microsoft.Data.Sqlite;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Maui.Controls;
+using Notification_APP.Utils.CacheData;
+using Notification_APP.Utils.Timestamp;
+using System.Globalization;
 
 namespace Notification_APP.Utils.Database
 {
@@ -14,9 +13,9 @@ namespace Notification_APP.Utils.Database
         private static string GenerateID()
         {
             Random random = new Random();
-            string number = "";
+            string number = String.Empty;
 
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 6; i++)
             {
                 number += random.Next(0, 10).ToString();
             }
@@ -24,21 +23,25 @@ namespace Notification_APP.Utils.Database
             return number;
         }
 
-        public static void CreateNewNotification(string name, int timestamp)
+        public static void CreateNewNotification(string name, DateTime time)
         {
-            var databaseFile = Path.Combine(FileSystem.Current.AppDataDirectory, "Database.db");
+            string databaseFile = Path.Combine(FileSystem.Current.AppDataDirectory, "Database.db");
             _connection = new SqliteConnection(@"Data Source=" + databaseFile);
 
             try
             {
+                CultureInfo germanCulture = new CultureInfo("de-DE");
+                string formattedDateTime = time.ToString("G", germanCulture);
+
                 _connection.Open();
-                var query = "INSERT INTO `Notifications` (ID, Name, Timestamp) VALUES (" + GenerateID() + ", '" + name + "', " + timestamp.ToString() + ") ";
-                var sqlCMD = new SqliteCommand(query, _connection);
+                string query = "INSERT INTO `Notifications` (ID, Name, Timestamp) VALUES (" + GenerateID() + ", '" + name + "', '" + formattedDateTime + "') ";
+                SqliteCommand sqlCMD = new SqliteCommand(query, _connection);
                 sqlCMD.ExecuteNonQuery();
             }
             finally
             {
                 _connection.Close();
+                SafeCache.SafeNotificationsOnLoad(LoadNotifications.LoadNotificationsDatabase());
             }
         }
     }

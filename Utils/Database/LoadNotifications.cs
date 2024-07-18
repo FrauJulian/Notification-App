@@ -1,9 +1,10 @@
 ﻿using Microsoft.Data.Sqlite;
 using Newtonsoft.Json;
+using Notification_APP.Utils.CacheData;
 
 namespace Notification_APP.Utils.Database
 {
-    internal class LoadNotification
+    internal class LoadNotifications
     {
         private static SqliteConnection? _connection;
 
@@ -15,10 +16,9 @@ namespace Notification_APP.Utils.Database
             try
             {
                 _connection.Open();
-                var query = "SELECT * FROM `Notifications`";
-                var sqlCMD = new SqliteCommand(query, _connection);
+                string query = "SELECT * FROM `Notifications`";
+                SqliteCommand sqlCMD = new SqliteCommand(query, _connection);
                 var reader = sqlCMD.ExecuteReader();
-
 
                 var resultList = new List<Dictionary<string, object>>();
 

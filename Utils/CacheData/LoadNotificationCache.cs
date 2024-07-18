@@ -1,23 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Notification_APP.Utils.Database;
+using Notification_APP.ViewModel;
 
 namespace Notification_APP.Utils.CacheData
 {
     internal class LoadCache
     {
-        public static string[] LoadNotificationCache(string[] data)
+
+        private static Presenter? _presenter;
+
+        public static string LoadNotificationCache()
         {
-            var cacheFile = Path.Combine(FileSystem.Current.CacheDirectory, "Notifications.json");
+            string cacheFile = Path.Combine(FileSystem.Current.CacheDirectory, "Notifications.json");
             if (File.Exists(cacheFile))
             {
-                string Content = File.ReadAllText(cacheFile);
-                return [Content]; 
+                return File.ReadAllText(cacheFile); 
             }
 
-            return [];
+            return String.Empty;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Notification_APP.Utils
         {
             if (subTitle != null)
             {
-                var request = new NotificationRequest
+                NotificationRequest request = new NotificationRequest
                 {
                     NotificationId = 1337,
                     Title = name,
@@ -21,7 +21,7 @@ namespace Notification_APP.Utils
             }
             else
             {
-                var request = new NotificationRequest
+                NotificationRequest request = new NotificationRequest
                 {
                     NotificationId = 1337,
                     Title = name,

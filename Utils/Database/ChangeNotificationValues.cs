@@ -1,10 +1,5 @@
 ﻿using Microsoft.Data.Sqlite;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+using Notification_APP.Utils.CacheData;
 
 namespace Notification_APP.Utils.Database
 {
@@ -14,7 +9,7 @@ namespace Notification_APP.Utils.Database
 
         public static void ChangeNotificationValues(int id, string valueName, string value)
         {
-            var databaseFile = Path.Combine(FileSystem.Current.AppDataDirectory, "Database.db");
+            string databaseFile = Path.Combine(FileSystem.Current.AppDataDirectory, "Database.db");
             _connection = new SqliteConnection(@"Data Source=" + databaseFile);
 
             try
@@ -27,6 +22,7 @@ namespace Notification_APP.Utils.Database
             finally
             {
                 _connection.Close();
+                SafeCache.SafeNotificationsOnLoad(LoadNotifications.LoadNotificationsDatabase());
             }
         }
     }

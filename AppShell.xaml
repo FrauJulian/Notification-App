@@ -5,11 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Notification_APP"
     Shell.FlyoutBehavior="Disabled"
-    Title="Notification_APP">
+    Title="Erinnerungs App">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <ShellContent Title="Erinnerungen" ContentTemplate="{DataTemplate local:MainPage}"/>
 
 </Shell>

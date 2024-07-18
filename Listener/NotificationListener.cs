@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using Notification_APP.Utils.CacheData;
 
 namespace Notification_APP.Listener
 {
-    internal class NotificationListener
+    internal class Listeners
     {
-        public static bool CheckNotificaiton() 
+        public static void CheckNotificaiton() 
         {
-            return true;
+
         }
     }
 }
