@@ -1,19 +1,19 @@
-﻿using Notification_APP.Utils;
-using Notification_APP.Utils.Database;
+﻿using Notification_APP.ViewModel;
 
 namespace Notification_APP
 {
     public partial class MainPage : ContentPage
     {
+
         public MainPage()
         {
+            this.BindingContext = new NotificationViewModel();
             InitializeComponent();
         }
-
-        async void CreateNotificationBtn(object sender, EventArgs args)
+        
+        private void OnCollectionViewSelectionChanged(object sender, SelectedItemChangedEventArgs e)
         {
-            CreateNotification.CreateNewNotification("test", DateTime.Now);
-            UpdateHelper.UpdatePropeties();
+            //DisplayAlert("hallo", e.SelectedItem.ToString(), "NO");
         }
     }
 }

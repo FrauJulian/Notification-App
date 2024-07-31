@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!--  LIGHT MODE | COLORS  -->
+	<Color name="LightBackgroundColor">#ffffff</Color>
+	<Color name="LightColorGradient">#00e3ff</Color>
+	<Color name="LightNotificationBackground">#bae6ff</Color>
+	<Color name="LightNotificationAddButtonBackgroundColor">#00e3ff</Color>
+	<Color name="LightNotificationAddButtonTextColor">#ffffff</Color>
+	<Color name="LightGeneralButtonBackgroundColor">transparent</Color>
+	<Color name="LightGeneralButtonTextColor">transparent</Color>
+	<Color name="LightGeneralTextColor">#000000</Color>
+
+	<!--  DARK MODE | COLORS  -->
+	<Color name="DarkBackgroundColor">#00e3ff</Color>
+	<Color name="DarkColorGradient">#545454</Color>
+	<Color name="DarkNotificationBackground">#00a6c4</Color>
+	<Color name="DarkNotificationAddButtonBackgroundColor">#38b6ff</Color>
+	<Color name="DarkNotificationAddButtonTextColor">#ffffff</Color>
+	<Color name="DarkGeneralButtonBackgroundColor">transparent</Color>
+	<Color name="DarkGeneralButtonTextColor">#ffffff</Color>
+	<Color name="DarkGeneralTextColor">#ffffff</Color>
+</resources>

@@ -4,71 +4,11 @@
              xmlns:local="clr-namespace:Notification_APP"
              x:Class="Notification_APP.App">
     <Application.Resources>
-        <!--
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-        -->
-
-        <Style TargetType="ContentPage">
-            <Setter Property="BackgroundColor" Value="White" />
-        </Style>
-        <Style TargetType="ListView">
-            <Setter Property="BackgroundColor" Value="White" />
-        </Style>
-        
-        <Style TargetType="Button">
-            <Setter Property="BackgroundColor" Value="#5271ff" />
-            <Setter Property="CornerRadius" Value="20"/>
-            <Setter Property="BorderWidth" Value="2"/>
-            <Setter Property="TextColor" Value="#000000"/>
-            <Setter Property="FontSize" Value="45"/>
-            
-        </Style>
-
-        <!--    Notification Boxes    -->
-        
-            <!-- Notification Stack Container -->
-        <Style TargetType="Frame">
-            <Setter Property="BackgroundColor" Value="#00cce5"/>
-            <Setter Property="CornerRadius" Value="10"/>
-        </Style>
-
-
-
-        <!--
-             Notification Edit Button 
-        <Style TargetType="">
-
-        </Style>
-        
-             Notification Change Button 
-        <Style TargetType="">
-
-        </Style> -->
-
-        <!-- Label G -->
-        <Style TargetType="Label">
-            <Setter Property="TextColor" Value="#000000"/>
-        </Style>
-
-            <!-- Notification Name special Format -->
-        <Style x:Key="NotificationName" TargetType="Label">
-            <Setter Property="FontAttributes" Value="Bold"/>
-        </Style>
-            
-            <!-- Notification Description special Format -->
-        <Style x:Key="NotificationDescription" TargetType="Label">
-            <Setter Property="FontAttributes" Value="None"/>
-        </Style>
-        
-            <!-- Notification Timestamp special Format -->
-        <Style x:Key="NotificationTimestamp" TargetType="Label">
-            <Setter Property="FontAttributes" Value="Italic"/>
-        </Style>
-
     </Application.Resources>
 </Application>

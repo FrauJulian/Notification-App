@@ -4,9 +4,9 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Notification_APP"
-    Shell.FlyoutBehavior="Disabled"
-    Title="Erinnerungs App">
+    Title="Erinnerungs App"
+    Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent Title="Erinnerungen" ContentTemplate="{DataTemplate local:MainPage}"/>
+    <ShellContent Title="Notification" ContentTemplate="{DataTemplate local:MainPage}" />
 
 </Shell>

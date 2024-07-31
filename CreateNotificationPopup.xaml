@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    x:Class="Notification_APP.CreateNotificationPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:item="clr-namespace:Notification_APP.Model"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:viewmodel="clr-namespace:Notification_APP.ViewModel">
+
+    <toolkit:Popup.Resources>
+        <Style TargetType="Entry">
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightGeneralTextColor}, Dark={StaticResource LightGeneralTextColor}}" />
+            <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource LightGeneralTextColor}, Dark={StaticResource LightGeneralTextColor}}" />
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightBackgroundColor}, Dark={StaticResource LightBackgroundColor}}" />
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightGeneralTextColor}, Dark={StaticResource LightGeneralTextColor}}" />
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightBackgroundColor}, Dark={StaticResource LightBackgroundColor}}" />
+        </Style>
+        <Style TargetType="TimePicker">
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightGeneralTextColor}, Dark={StaticResource LightGeneralTextColor}}" />
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightBackgroundColor}, Dark={StaticResource LightBackgroundColor}}" />
+        </Style>
+        <Style TargetType="Frame">
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="0" />
+        </Style>
+    </toolkit:Popup.Resources>
+
+    <toolkit:Popup.Content>
+        <Grid
+            Padding="20"
+            BackgroundColor="Transparent"
+            HeightRequest="420"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="300">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Frame
+                Grid.Row="1"
+                Padding="20"
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightNotificationBackground},
+                                                  Dark={StaticResource DarkNotificationBackground}}"
+                CornerRadius="20"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <StackLayout Spacing="15">
+                    <Label
+                        Grid.Row="0"
+                        FontSize="Large"
+                        HorizontalOptions="Center"
+                        Text="Create new Notification"
+                        TextColor="{AppThemeBinding Light={StaticResource LightGeneralTextColor},
+                                                    Dark={StaticResource DarkGeneralTextColor}}" />
+
+                    <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightBackgroundColor}, Dark={StaticResource LightBackgroundColor}}">
+                        <Entry x:Name="TitleEntry" Placeholder="Title" />
+                    </Frame>
+                    <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightBackgroundColor}, Dark={StaticResource LightBackgroundColor}}">
+                        <Entry x:Name="DescriptionEntry" Placeholder="Description" />
+                    </Frame>
+                    <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightBackgroundColor}, Dark={StaticResource LightBackgroundColor}}">
+                        <DatePicker x:Name="DatePicker" />
+                    </Frame>
+                    <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightBackgroundColor}, Dark={StaticResource LightBackgroundColor}}">
+                        <TimePicker x:Name="TimePicker" />
+                    </Frame>
+                    <Button
+                        BackgroundColor="{AppThemeBinding Light={StaticResource LightNotificationAddButtonBackgroundColor},
+                                                          Dark={StaticResource DarkNotificationAddButtonBackgroundColor}}"
+                        Clicked="CreateNotificationButton"
+                        CornerRadius="10"
+                        Text="CREATE"
+                        TextColor="{AppThemeBinding Light={StaticResource LightGeneralTextColor},
+                                                    Dark={StaticResource DarkGeneralTextColor}}" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </toolkit:Popup.Content>
+</toolkit:Popup>
