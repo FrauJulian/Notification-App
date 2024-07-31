@@ -2,7 +2,7 @@
 
 <br>
 
-Another Demo Project to learn C#! Use it if you do not violate the license.
+Another Demo Project to learn C#!
 
 <br>
 
@@ -14,6 +14,7 @@ Another Demo Project to learn C#! Use it if you do not violate the license.
 - Microsoft.Data.Sqlite
 - Plugin.LocalNotification
 - CommunityToolkit.Mvvm
+- CommunityToolkit.Maui
 
 <br>
 
